@@ -16,6 +16,7 @@
 </header>
 <main>
   <section class="stats" id="stats"></section>
+  <section class="strip" id="strip"></section>
   <section class="controls">
     <input id="q" type="search" placeholder="Search name or slug" aria-label="Search">
     <select id="cat" aria-label="Category"></select>
@@ -26,12 +27,13 @@
       <option value="tvl">Sort: TVL</option>
       <option value="change">Sort: 7d change</option>
       <option value="age">Sort: age</option>
+      <option value="odds">Sort: token odds</option>
     </select>
   </section>
   <section id="detail" class="detail" hidden></section>
   <table class="board">
     <thead>
-      <tr><th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th><th>Age</th><th>Implied value</th></tr>
+      <tr><th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th><th>Age</th><th>Implied value</th><th>Odds</th><th>Verdict</th></tr>
     </thead>
     <tbody id="rows"></tbody>
   </table>

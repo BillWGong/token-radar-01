@@ -97,6 +97,38 @@ main { max-width: 1180px; margin: 0 auto; padding: 16px 32px 40px; }
 .board tbody tr:hover { background: var(--panel2); }
 .board tbody tr.sel { background: #14263f; }
 .board td .sub { color: var(--muted); font-size: 12px; }
+.verdict {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.verdict-farm { background: var(--green); color: #06130c; }
+.verdict-thin { background: var(--amber); color: #1a1205; }
+.verdict-skip { background: #26344d; color: var(--muted); }
+.strip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.strip b { color: var(--text); font-weight: 600; }
+.strip b.farm { color: var(--green); }
+.strip b.thin { color: var(--amber); }
+.integrity { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+.chip {
+  display: inline-block;
+  margin: 0 4px 4px 0;
+  padding: 1px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  font-size: 12px;
+}
+.chip.ok { border-color: var(--green); color: var(--green); }
 .up { color: var(--green); }
 .down { color: var(--red); }
 .badge {
