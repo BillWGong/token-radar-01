@@ -1,0 +1,132 @@
+:root {
+  --bg: #070d1a;
+  --panel: #0d1526;
+  --panel2: #111c33;
+  --line: #1c2b45;
+  --text: #dbe4f0;
+  --muted: #8aa0bd;
+  --cyan: #22d3ee;
+  --green: #34d399;
+  --red: #f87171;
+  --amber: #fbbf24;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.masthead {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(circle at 85% 20%, #12233f 0, transparent 55%), var(--bg);
+}
+.rings {
+  flex: 0 0 84px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 1px solid var(--cyan);
+  background:
+    radial-gradient(circle, transparent 18px, var(--line) 18px, transparent 19px),
+    radial-gradient(circle, transparent 32px, var(--line) 32px, transparent 33px);
+  position: relative;
+}
+.rings::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+}
+h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 6px;
+  color: var(--cyan);
+}
+.tag { margin: 4px 0; color: var(--text); font-size: 15px; }
+.meta { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+main { max-width: 1180px; margin: 0 auto; padding: 16px 32px 40px; }
+.stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 4px 0 14px;
+}
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 16px;
+  min-width: 130px;
+}
+.stat b { display: block; font-size: 20px; color: var(--cyan); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 12px; }
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.controls input[type="search"], .controls select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+}
+.controls input[type="search"] { flex: 1 1 220px; }
+.check { color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.board { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.board th, .board td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); }
+.board th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; background: var(--panel2); }
+.board td.num, .board th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.board tbody tr { cursor: pointer; }
+.board tbody tr:hover { background: var(--panel2); }
+.board tbody tr.sel { background: #14263f; }
+.board td .sub { color: var(--muted); font-size: 12px; }
+.up { color: var(--green); }
+.down { color: var(--red); }
+.badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--amber);
+  color: #1a1205;
+  font-size: 11px;
+  font-weight: 700;
+}
+.count { color: var(--muted); font-size: 12px; }
+.detail {
+  background: var(--panel);
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+.detail h2 { margin: 0 0 4px; font-size: 20px; }
+.detail h2 .sub { color: var(--muted); font-size: 13px; font-weight: 400; }
+.detail .grid { display: flex; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
+.detail .cell b { display: block; font-size: 17px; font-variant-numeric: tabular-nums; }
+.detail .cell span { color: var(--muted); font-size: 12px; }
+.detail .formula { color: var(--muted); font-size: 13px; background: var(--panel2); border-radius: 6px; padding: 8px 10px; }
+.detail ol { margin: 10px 0 0; padding-left: 20px; }
+.detail li { margin-bottom: 6px; }
+.detail li b { color: var(--cyan); }
+.live { margin-top: 28px; }
+.live h2 { font-size: 18px; margin-bottom: 4px; }
+.live p { color: var(--muted); margin-top: 0; }
+footer { margin-top: 28px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 12px; }

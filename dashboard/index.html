@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="rings" aria-hidden="true"></div>
+  <div>
+    <h1>TOKEN RADAR</h1>
+    <p class="tag">Every protocol that records no token, ranked by what its token would be worth.</p>
+    <p class="meta" id="meta"></p>
+  </div>
+</header>
+<main>
+  <section class="stats" id="stats"></section>
+  <section class="controls">
+    <input id="q" type="search" placeholder="Search name or slug" aria-label="Search">
+    <select id="cat" aria-label="Category"></select>
+    <label class="check"><input id="wl" type="checkbox"> Watchlist only</label>
+    <select id="sort" aria-label="Sort">
+      <option value="rank">Sort: rank</option>
+      <option value="implied">Sort: implied value</option>
+      <option value="tvl">Sort: TVL</option>
+      <option value="change">Sort: 7d change</option>
+      <option value="age">Sort: age</option>
+    </select>
+  </section>
+  <section id="detail" class="detail" hidden></section>
+  <table class="board">
+    <thead>
+      <tr><th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th><th>Age</th><th>Implied value</th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="count" id="count"></p>
+  <section class="live">
+    <h2>Already launched — not on the board</h2>
+    <p>These protocols record a token that already trades, so they are not ranked as launches. They are the comparables the category multiples come from.</p>
+    <table class="board">
+      <thead>
+        <tr><th>Protocol</th><th>Category</th><th>TVL</th><th>Market cap</th><th>mcap / TVL</th></tr>
+      </thead>
+      <tbody id="liveRows"></tbody>
+    </table>
+  </section>
+  <footer>
+    <p id="method"></p>
+    <p>“Records no token” means DefiLlama records no token for the protocol; it is not proof that none exists. Implied values are this board's own claim, never a market price. Farm plans are a starting point: check the protocol's own pages before you move money.</p>
+  </footer>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
